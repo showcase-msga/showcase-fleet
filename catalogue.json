@@ -1,7 +1,7 @@
 {
     "format":  1,
-    "sequence":  1,
-    "published":  "2026-11-23T14:54:31",
+    "sequence":  2,
+    "published":  "2026-11-23T15:14:06",
     "api":  "https://australia-southeast1-adgroup-showcase-fleet.cloudfunctions.net/api",
     "packagesBase":  "https://raw.githubusercontent.com/showcase-msga/showcase-fleet/main/",
     "packages":  {
@@ -12,6 +12,13 @@
                                                          "size":  246692,
                                                          "contentHash":  "17c35865f40902980b952e2a40cae11851b1aa6cdc172198b63ca11e6871aeb6",
                                                          "published":  "2026-11-23T14:54:31"
+                                                     },
+                                  "trial11_231126":  {
+                                                         "path":  "packages/core/trial11_231126.zip",
+                                                         "sha256":  "8ec5ffd749b5b522169714ef034ecf16f88eb78ab3b94f0e6fde8d95e1a80b28",
+                                                         "size":  246762,
+                                                         "contentHash":  "d553c5398c08068c5c9d170015107dbe16fb93af261393481d4e3a84ec20a7d9",
+                                                         "published":  "2026-11-23T15:14:06"
                                                      }
                               },
                      "baseline":  {
@@ -21,6 +28,13 @@
                                                              "size":  9675,
                                                              "contentHash":  "4e9b57f9116aa2ca5ce9e71be111f5f3d63fd512f4787f3cba6593403ca1ed9b",
                                                              "published":  "2026-11-23T14:54:31"
+                                                         },
+                                      "trial11_231126":  {
+                                                             "path":  "packages/baseline/trial11_231126.zip",
+                                                             "sha256":  "579ad301e50583d591fdb94b017c6bcfe44a2123c15f61a37d3348a3094c38b5",
+                                                             "size":  9766,
+                                                             "contentHash":  "910fb7af517c5d06156ee9f2dc4e7df490593850598cea03a0f6e301ff8f76d8",
+                                                             "published":  "2026-11-23T15:14:06"
                                                          }
                                   },
                      "blackout":  {
