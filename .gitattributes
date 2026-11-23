@@ -1,0 +1,2 @@
+# Store every file byte for byte: catalogue.json is signed, so Git must never change its line endings
+* -text
