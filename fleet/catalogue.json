@@ -1,7 +1,7 @@
 {
     "format":  1,
-    "sequence":  3,
-    "published":  "2026-11-23T15:26:04",
+    "sequence":  4,
+    "published":  "2026-11-23T16:38:52",
     "api":  "https://australia-southeast1-adgroup-showcase-fleet.cloudfunctions.net/api",
     "packagesBase":  "https://raw.githubusercontent.com/showcase-msga/showcase-fleet/main/fleet/",
     "packages":  {
@@ -19,6 +19,13 @@
                                                          "size":  246762,
                                                          "contentHash":  "d553c5398c08068c5c9d170015107dbe16fb93af261393481d4e3a84ec20a7d9",
                                                          "published":  "2026-11-23T15:14:06"
+                                                     },
+                                  "trial12_231126":  {
+                                                         "path":  "packages/core/trial12_231126.zip",
+                                                         "sha256":  "0886eeb7021b6b7c7c7b582c46ea5b62d1d9fdc83c134779656a72f893600b58",
+                                                         "size":  246815,
+                                                         "contentHash":  "9da60630e71e16fdd2dd3099f35378a5b99db8fddcf4fbbd29cc21a2521b1e6c",
+                                                         "published":  "2026-11-23T16:38:52"
                                                      }
                               },
                      "baseline":  {

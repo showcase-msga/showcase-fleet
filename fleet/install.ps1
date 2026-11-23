@@ -1,4 +1,4 @@
-# Showcase Fleet installer (published 23 Nov 2026, catalogue 3). Installs Fleet on this NUC from a one-time code made on its page in
+# Showcase Fleet installer (published 23 Nov 2026, catalogue 4). Installs Fleet on this NUC from a one-time code made on its page in
 # Showcase Fleet (document.showcase.space/fleet). In PowerShell opened as administrator:
 #   $code='K7Q2-9WXM'; irm '<this file>' | iex
 # or run install_showcase_fleet.bat from the install link, as administrator.
@@ -18,6 +18,8 @@
   function Say([string]$m, [string]$c = 'Gray') { Write-Host $m -ForegroundColor $c }
   function Stop-Install([string]$m) { Say "`n[FAIL] $m" Red; throw 'stop' }
 
+  # a record of every install, so a run that stops partway always leaves a reason (SYSTEM and admins can read it)
+  try { New-Item -ItemType Directory -Force -Path $Home_ | Out-Null; Start-Transcript -Path (Join-Path $Home_ 'install_log.txt') -Append | Out-Null } catch { }
   try {
     Say "`nShowcase Fleet: installing on $env:COMPUTERNAME" White
     $me = [Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()
@@ -51,7 +53,8 @@
       try { Invoke-RestMethod -Uri "$($cat.api.TrimEnd('/'))/v1/$op" -Method Post -Headers $h -ContentType 'application/json; charset=utf-8' -Body $Utf8.GetBytes(($body | ConvertTo-Json -Depth 8 -Compress)) -TimeoutSec 90 -UseBasicParsing }
       catch {
         $m = $_.Exception.Message
-        try { $sr = New-Object IO.StreamReader($_.Exception.Response.GetResponseStream()); $e = $sr.ReadToEnd() | ConvertFrom-Json; if ($e.error) { $m = $e.error } } catch { }
+        # PowerShell 5.1 keeps the API's answer in ErrorDetails.Message (the response stream has been read by then)
+        try { $e = $_.ErrorDetails.Message | ConvertFrom-Json; if ($e.error) { $m = $e.error } } catch { }
         throw $m
       }
     }
@@ -78,8 +81,17 @@
     if (Test-Path $dir) { Remove-Item $dir -Recurse -Force }
     [IO.Compression.ZipFile]::ExtractToDirectory($zip, $dir); Remove-Item $zip -Force
     Set-Content (Join-Path $dir '.sha256') $e.sha256 -Encoding ASCII
-    $out = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $dir 'app\install_window.ps1') -Source $dir 2>&1
-    $out | ForEach-Object { "$_" } | Where-Object { $_ -match '^\[(OK|WARN|FAIL)\]' } | ForEach-Object { Say "       $_" }
+    # a Fleet folder left by an early trial can have permissions even administrators can't use (trial 3's bug; the
+    # uninstaller couldn't remove it): take it back and reset it before copying over it (Brightly, 23 Nov 2026)
+    $win = Join-Path $Home_ 'window'
+    if (Test-Path $win) {
+      & takeown.exe /F $win /R /D Y 2>&1 | Out-Null
+      & icacls.exe $win /reset /T /C /Q 2>&1 | Out-Null
+    }
+    $out = @(& powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $dir 'app\install_window.ps1') -Source $dir 2>&1 | ForEach-Object { "$_" })
+    $out | Where-Object { $_ -match '^\[(OK|WARN|FAIL)\]' } | ForEach-Object { Say "       $_" }
+    $bad = @($out | Where-Object { $_ -match '^\[FAIL\]' })
+    if ($bad.Count) { Stop-Install "Fleet's files couldn't be put in place: $($bad[0] -replace '^\[FAIL\]\s*', ''). The NUC is enrolled; run the installer again after fixing it." }
     Say "[OK]   Fleet $ver installed" Green
 
     # ---- the agent: its tasks, then the NUC's ticked modules now (the first install doesn't wait for 1am)
@@ -95,5 +107,5 @@
     Say '       The agent log is C:\ProgramData\showcase_fleet\agent\agent.log.'
   } catch {
     if ("$_" -ne 'stop') { Say "`n[FAIL] $_" Red }
-  }
+  } finally { try { Stop-Transcript | Out-Null } catch { } }
 }
