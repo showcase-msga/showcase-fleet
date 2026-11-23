@@ -1,0 +1,104 @@
+{
+    "format":  1,
+    "sequence":  3,
+    "published":  "2026-11-23T15:26:04",
+    "api":  "https://australia-southeast1-adgroup-showcase-fleet.cloudfunctions.net/api",
+    "packagesBase":  "https://raw.githubusercontent.com/showcase-msga/showcase-fleet/main/fleet/",
+    "packages":  {
+                     "core":  {
+                                  "trial10_231126":  {
+                                                         "path":  "packages/core/trial10_231126.zip",
+                                                         "sha256":  "46dac16533a0d8cc774f7ca87fca64b9a9de0c90442c02da0118c5578d6df51b",
+                                                         "size":  246692,
+                                                         "contentHash":  "17c35865f40902980b952e2a40cae11851b1aa6cdc172198b63ca11e6871aeb6",
+                                                         "published":  "2026-11-23T14:54:31"
+                                                     },
+                                  "trial11_231126":  {
+                                                         "path":  "packages/core/trial11_231126.zip",
+                                                         "sha256":  "8ec5ffd749b5b522169714ef034ecf16f88eb78ab3b94f0e6fde8d95e1a80b28",
+                                                         "size":  246762,
+                                                         "contentHash":  "d553c5398c08068c5c9d170015107dbe16fb93af261393481d4e3a84ec20a7d9",
+                                                         "published":  "2026-11-23T15:14:06"
+                                                     }
+                              },
+                     "baseline":  {
+                                      "trial10_231126":  {
+                                                             "path":  "packages/baseline/trial10_231126.zip",
+                                                             "sha256":  "fbb5566fc277a0420049087cac5313c65348472d817877ecc2fecc1727ebffbe",
+                                                             "size":  9675,
+                                                             "contentHash":  "4e9b57f9116aa2ca5ce9e71be111f5f3d63fd512f4787f3cba6593403ca1ed9b",
+                                                             "published":  "2026-11-23T14:54:31"
+                                                         },
+                                      "trial11_231126":  {
+                                                             "path":  "packages/baseline/trial11_231126.zip",
+                                                             "sha256":  "579ad301e50583d591fdb94b017c6bcfe44a2123c15f61a37d3348a3094c38b5",
+                                                             "size":  9766,
+                                                             "contentHash":  "910fb7af517c5d06156ee9f2dc4e7df490593850598cea03a0f6e301ff8f76d8",
+                                                             "published":  "2026-11-23T15:14:06"
+                                                         }
+                                  },
+                     "blackout":  {
+                                      "trial7_241026":  {
+                                                            "path":  "packages/blackout/trial7_241026.zip",
+                                                            "sha256":  "9693570bb3c7e83ae9ce88dd6337314175cf6c46b3b7dd138c54dd7a8f531455",
+                                                            "size":  7184,
+                                                            "contentHash":  "6baa1c89ee74c69832ec4e650148fbf2afccc57154a30b556f307d93e92690bf",
+                                                            "published":  "2026-11-23T14:54:31"
+                                                        }
+                                  },
+                     "bluesound_restart":  {
+                                               "trial10_231126":  {
+                                                                      "path":  "packages/bluesound_restart/trial10_231126.zip",
+                                                                      "sha256":  "a64187745bd814149c83f72e3c5f8772b72a152b0e82359798dac4bf7f7dee33",
+                                                                      "size":  7369,
+                                                                      "contentHash":  "a0aaeb0becae0fa781666c302c1c9dc050afc6e527bc48226a120e7211315b08",
+                                                                      "published":  "2026-11-23T14:54:31"
+                                                                  }
+                                           },
+                     "quiet":  {
+                                   "trial10_231126":  {
+                                                          "path":  "packages/quiet/trial10_231126.zip",
+                                                          "sha256":  "2aee0ccb5d667f10211e49df559c70c9d1facfd9adfbb35d693d83110fe7cc41",
+                                                          "size":  5840,
+                                                          "contentHash":  "b8d1b536e3e0911d8fe1708abed21ae956672c6bfd555e68002b639a71fea4bf",
+                                                          "published":  "2026-11-23T14:54:31"
+                                                      }
+                               },
+                     "reconnect":  {
+                                       "141026":  {
+                                                      "path":  "packages/reconnect/141026.zip",
+                                                      "sha256":  "05f995838d70b52afea483abc90d98a161319760904b1dd594ca50596d27418c",
+                                                      "size":  4654,
+                                                      "contentHash":  "fc7515eb66c19377fdcded76b4bf901286086ef7e8e34d2b315400409cc07d9d",
+                                                      "published":  "2026-11-23T14:54:31"
+                                                  }
+                                   },
+                     "showcase_startup_bat":  {
+                                                  "trial7_241026":  {
+                                                                        "path":  "packages/showcase_startup_bat/trial7_241026.zip",
+                                                                        "sha256":  "1d06a3f35c14dd35dc9cc6787306f43bef775286100523d41e7c97109f72152d",
+                                                                        "size":  7501,
+                                                                        "contentHash":  "7ad1bd2c80d9dfc4216a77967c2490a4af78334c692666194fe771756b7998dc",
+                                                                        "published":  "2026-11-23T14:54:31"
+                                                                    }
+                                              },
+                     "startup_kiosk":  {
+                                           "trial8_241026":  {
+                                                                 "path":  "packages/startup_kiosk/trial8_241026.zip",
+                                                                 "sha256":  "a659a10fdf6d3e5824e44f839c1ff28cdec99d10a3ac5690c2331e61da8b70e3",
+                                                                 "size":  39361,
+                                                                 "contentHash":  "56aab489a0472eb71e65461b5319c8887325605315fcc25ab34e2244de32c383",
+                                                                 "published":  "2026-11-23T14:54:31"
+                                                             }
+                                       },
+                     "support_screen":  {
+                                            "trial8_241026":  {
+                                                                  "path":  "packages/support_screen/trial8_241026.zip",
+                                                                  "sha256":  "8ef37a3aff3794ad569835fd6c3fef706ae22f6c828f4fafb0fea1f6363dd9e9",
+                                                                  "size":  179747,
+                                                                  "contentHash":  "9089493e577a32390c315551855088e6f3b2e13fb1efa3d3cea2c685269505e5",
+                                                                  "published":  "2026-11-23T14:54:31"
+                                                              }
+                                        }
+                 }
+}
