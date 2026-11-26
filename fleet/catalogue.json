@@ -1,7 +1,7 @@
 {
     "format":  1,
-    "sequence":  4,
-    "published":  "2026-11-23T16:38:52",
+    "sequence":  5,
+    "published":  "2026-11-26T14:48:01",
     "api":  "https://australia-southeast1-adgroup-showcase-fleet.cloudfunctions.net/api",
     "packagesBase":  "https://raw.githubusercontent.com/showcase-msga/showcase-fleet/main/fleet/",
     "packages":  {
@@ -26,6 +26,13 @@
                                                          "size":  246815,
                                                          "contentHash":  "9da60630e71e16fdd2dd3099f35378a5b99db8fddcf4fbbd29cc21a2521b1e6c",
                                                          "published":  "2026-11-23T16:38:52"
+                                                     },
+                                  "trial13_241126":  {
+                                                         "path":  "packages/core/trial13_241126.zip",
+                                                         "sha256":  "b4a92cdec60d2c15b5268bd16bdf03c99bf352e22bdf494faf13b84d5e7389b3",
+                                                         "size":  247204,
+                                                         "contentHash":  "4c6a0672e536ae9d13f08d341f37fb6c1628e7eb938bdd8e378b3e423d5af062",
+                                                         "published":  "2026-11-26T14:48:01"
                                                      }
                               },
                      "baseline":  {
@@ -42,6 +49,13 @@
                                                              "size":  9766,
                                                              "contentHash":  "910fb7af517c5d06156ee9f2dc4e7df490593850598cea03a0f6e301ff8f76d8",
                                                              "published":  "2026-11-23T15:14:06"
+                                                         },
+                                      "trial13_241126":  {
+                                                             "path":  "packages/baseline/trial13_241126.zip",
+                                                             "sha256":  "e27e74771fca1efee5fbe08deea1d69685c1fa2075d4bfd1cad2d8ca0fad449f",
+                                                             "size":  11896,
+                                                             "contentHash":  "44e64d68558b5399c439f45b947d78e56ded3c439ab0325345b5c2185697cb9e",
+                                                             "published":  "2026-11-26T14:48:01"
                                                          }
                                   },
                      "blackout":  {
