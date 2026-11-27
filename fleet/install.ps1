@@ -1,4 +1,4 @@
-# Showcase Fleet installer (published 26 Nov 2026, catalogue 6). Installs Fleet on this NUC from a one-time code made on its page in
+# Showcase Fleet installer (published 28 Nov 2026, catalogue 7). Installs Fleet on this NUC from a one-time code made on its page in
 # Showcase Fleet (document.showcase.space/fleet). In PowerShell opened as administrator:
 #   $code='K7Q2-9WXM'; irm '<this file>' | iex
 # or run install_showcase_fleet.bat from the install link, as administrator.
